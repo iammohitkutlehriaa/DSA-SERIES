@@ -21,7 +21,7 @@ void selectionSort(int *arr, int n) {
     }
     print(arr , n);
 }
-
+ 
 int main() {
     int arr[6] = {1,6,5,2,3,4};
     int  n  = sizeof(arr) / sizeof(int);
