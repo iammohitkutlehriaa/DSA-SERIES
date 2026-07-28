@@ -14,8 +14,8 @@ bool duplicate( int *arr , int n) {
 }
 
 int main() {
-    int arr[5] = {1,2,3,1};
+    int arr[4] = {1,2,3,1};
     int n = sizeof(arr) / sizeof(int);
-    duplicate(arr , n);
+    cout << duplicate(arr , n);
     return 0;
 }
