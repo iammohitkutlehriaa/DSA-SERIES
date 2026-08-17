@@ -26,7 +26,7 @@ class Complex {
    void showNum() {
       cout << real << " + " << img << "i \n";
    }
-   void operator + (Complex &c2) {
+   void operator +   (Complex &c2) {
       int realRes = this->real + c2.real;
       int imgRes = this->img + c2.img;
       Complex c3(realRes , imgRes);
@@ -36,8 +36,8 @@ class Complex {
 };
 
 int main() {
-   Complex c1(1,2);
-   Complex c2(3,4);
+   Complex c1(3,4);
+   Complex c2(1,2);
 
    c1.showNum();
    c2.showNum();
