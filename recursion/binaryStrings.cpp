@@ -17,6 +17,9 @@ void binString(int n  ,  int lastPlace, string ans) {
     }
 }
 
+
+
+
 int main() {
     string ans = "";
     binString(3, 0,ans);
