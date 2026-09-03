@@ -13,6 +13,12 @@ public:
         data = val;
         next = NULL;
     }
+    ~Node() {
+        if(next != NULL) {
+            delete next;
+            next = NULL;
+        }
+    }
 };
 
 class List
@@ -27,6 +33,14 @@ public:
         tail = NULL;
     }
 
+
+    ~List() {
+    
+        if(head != NULL ) {
+            delete head;
+            head = NULL;
+        }
+    }
     void push_front(int val)
     {
         Node *newNode = new Node(val);
@@ -68,6 +82,44 @@ public:
         }
         cout << "NULL\n"; 
     }
+
+    void insert(int val , int pos) {
+        Node*  newNode = new Node(val);
+
+        Node* temp = head;
+
+        for(int  i = 0; i < pos-1; i++) {
+            if(temp == NULL) {
+                cout << "Position is invalid";
+            }
+            temp = temp->next;
+
+            newNode->next = temp->next;
+            temp->next = newNode;
+
+        }
+    }
+
+    void pop_front() {
+        if(head == NULL) {
+            cout << "LINKED LIST IS EMPTY";
+            return;
+        }
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+    void pop_back() {
+        Node* temp = head;
+        while(temp->next->next != NULL) {
+           temp = temp->next;
+
+        }
+        temp->next = NULL;
+        delete tail;
+        tail = temp;
+    }
 };
 
 int main()
@@ -79,6 +131,9 @@ int main()
     ll.push_front(5);
     ll.push_back(2);
     ll.push_back(1);
+    ll.printList();
+    ll.pop_front();
+    ll.pop_back();
     ll.printList();
 
     return 0;
