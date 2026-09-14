@@ -33,6 +33,16 @@ class DoublyList {
             head = newNode;
         }
     }
+
+    void pop_front() {
+        Node* temp = head;
+        head = head->next;
+        if(head != NULL) {
+            head->prev = NULL;
+        }
+        temp->next = NULL;
+        delete temp;
+    }
     void printList() {
         Node* temp = head;
         while(temp != NULL ) {
@@ -51,6 +61,10 @@ int main() {
     dbll.push_front(3);
     dbll.push_front(2);
     dbll.push_front(1);
+
+    dbll.printList();
+
+    dbll.pop_front();
 
     dbll.printList();
     return  0;
