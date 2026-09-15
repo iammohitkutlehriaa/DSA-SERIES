@@ -64,6 +64,7 @@ int main() {
 
     dbll.printList();
 
+    
     dbll.pop_front();
 
     dbll.printList();
