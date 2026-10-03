@@ -22,6 +22,7 @@ using namespace std;
             cout << "-1\n";
         } else {
             cout << Q.front() << "\n";
+            
         }
     }
  }
