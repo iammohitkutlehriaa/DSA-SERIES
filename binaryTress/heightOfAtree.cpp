@@ -35,17 +35,27 @@ Node *buildTree(vector<int> nodes)
     return currNode;
 }
 
-int height(Node* root) {
+int height(Node *root)
+{
+
+    if (root == NULL)
+    {
+        return 0;
+    }
     int lefHt = height(root->left);
     int rigHt = height(root->right);
+
+    int currHt = max(lefHt, rigHt) + 1;
+    return currHt;
 }
 
 int main()
 {
-    vector<int> nodes = {1, 2, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+    vector<int> nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
 
     Node *root = buildTree(nodes);
 
+    cout << "height of a tree :" << height(root) << endl;
 
     return 0;
 }
