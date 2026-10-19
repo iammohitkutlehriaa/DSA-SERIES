@@ -52,6 +52,7 @@ bool rootToNodePath(Node *root, int n, vector<int> &path)
         return true;
     }
     path.pop_back();
+
     return false;
 }
 
@@ -72,6 +73,7 @@ int LCA(Node *root, int n1, int n2)
         }
         lca = path1[i];
     }
+    return lca;
 }
 
 int main()
