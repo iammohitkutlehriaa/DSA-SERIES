@@ -57,7 +57,7 @@ bool helper(Trie &trie , string key) {
         string first = key.substr(0, i + 1);
         string second = key.substr(i + 1);
 
-        if(trie.search(first) && helper(trie.second)) {
+        if(trie.search(first) && helper(trie,second)) {
             return true;
         }
     }
